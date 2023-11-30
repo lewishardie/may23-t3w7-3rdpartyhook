@@ -20,6 +20,12 @@ function App() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  //-- Everytime state message changes, we will update storageMessage value
+  useEffect(() => {
+    setStoredMessage(message);
+
+  }, [message])
+
   return (
     <div className="App">
       {message && <h1>{message}</h1>}
